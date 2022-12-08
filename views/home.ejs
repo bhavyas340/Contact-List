@@ -1,0 +1,52 @@
+<html>
+
+<head>
+    <title>
+        <%=locals.title%>
+    </title>
+    <script src="https://kit.fontawesome.com/d60a288fb7.js" crossorigin="anonymous"></script>
+    <!-- our css should be below to all other styels so that we can override it -->
+    <link rel="stylesheet" href="/css/home.css">
+
+</head>
+
+<body>
+    <h1><i class="fa-solid fa-address-book"></i> My Contacts List</h1>
+
+
+
+    
+
+        <ul>
+            <% for (let i of contact_list) {%>
+            <li >
+                <div class="parent">
+                 <p class=" pares p1">
+                     <!-- <span> -->
+                       <%= i.name%></p>
+                <p class="paras p2"> <%= i.phone %></p>
+                </div>
+                 <div class="delete-button" style="display: inline;">
+                    <a href="/delete-contact/?id=<%= i._id %>"><i class="contact fa-solid fa-trash-can"></i></a>
+                 </div>
+               
+           </li>
+
+           <% } %>
+    </ul>
+      
+
+
+
+            <form action="/contact-add" method="POST">
+                <input type="text" name="name" placeholder="Enter Name" required>
+                <input type="number" name="phone" placeholder="Enter Phone" required>
+                <button type="submit">Add</button>
+                <button type="Delete">Delete</button>
+            </form>
+            
+           
+            <script type="text/javascript" src="/js/home.js"></script>
+</body>
+
+</html>
