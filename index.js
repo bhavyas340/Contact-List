@@ -81,7 +81,7 @@ app.post('/contact-add', function(req,res){
         if(err){console.log('Error in creating a contact'); 
         return;}
 
-        console.log('********', newContact);
+        console.log('########', newContact);
         return res.redirect('back');
     });
     
